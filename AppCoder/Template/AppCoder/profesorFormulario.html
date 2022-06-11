@@ -1,0 +1,14 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block section_name %}
+<h3> Formulario para profesores </h3>
+{% endblock%}
+{% block ContenidoQueCambia %}
+<form action = {% url 'profesorFormulario' %} method = "POST"> {% csrf_token%}
+    <h1> Ingrese los datos del profesor </h1>
+   <table>
+       {{miFormulario.as_table}}
+   </table>
+    <input type = "submit" value="Enviar formulario hecho con la API">
+</form>
+{% endblock %}
